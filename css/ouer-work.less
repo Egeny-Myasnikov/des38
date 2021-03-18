@@ -1,0 +1,88 @@
+//main:style.less
+.ouer-work {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.8));
+    display: grid;
+}
+
+.wrapper-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    perspective: 120vw;
+    font-size: 1vw;
+
+    .card {
+        width: 20vw;
+        height: 20vw;
+        position: relative;
+        perspective: 120vw;
+        transform-style: preserve-3d;
+        margin: 1vw;
+
+
+
+        .container {
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform-style: preserve-3d;
+            width: 100%;
+            height: 100%;
+            transition: 1s ease-in-out;
+            box-shadow: 3px 3px 10px #000;
+
+            h3 {
+                position: absolute;
+                width: 100%;
+                z-index: 3;
+                background: rgba(0, 0, 0, 0.6);
+            }
+
+
+
+            img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 2;
+            }
+
+            .info {
+                display: grid;
+                justify-content: center;
+                align-content: center;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(135deg, #fff, #000);
+                transform-style: preserve-3d;
+                transform: rotateY(180deg);
+                box-shadow: inset 2px 2px 10px #0f0, inset -2px -2px 20px #fff;
+
+                h4 {
+                    transform-style: preserve-3d;
+                    color: #fff;
+                    padding: 1vw;
+                    background: linear-gradient(35deg, #0f0, transparent, #0f0);
+                    transform: translateZ(5vw);
+                    border-radius: 10px;
+                    border: var(--wheat_color) 3px solid;
+                    font-size: 1.5em;
+                }
+            }
+        }
+
+        &:hover {
+            .container {
+                transform: rotateY(180deg);
+            }
+        }
+    }
+}

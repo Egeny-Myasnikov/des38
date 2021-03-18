@@ -1,0 +1,250 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'MOD';
+    src: url(../fonts/MOD.ttf);
+}
+
+@font-face {
+    font-family: 'sverdlovsk';
+    src: url(../fonts/sverdlovsk.otf);
+}
+
+@font-face {
+    font-family: 'capture-smallz';
+    src: url(../fonts/capture-smallz.ttf);
+}
+
+@font-face {
+    font-family: 'gardens';
+    src: url(../fonts/Gardens.ttf);
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+&::-moz-selection {
+    color: #1d1d1d;
+    background: #009600;
+}
+
+&::selection {
+    color: #1d1d1d;
+    background: #009600;
+}
+
+&::after {
+    color: #fff;
+    transition: .5s linear;
+}
+
+&::before {
+    color: #fff;
+    transition: .5s linear;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    transition: .5s linear;
+
+    &:hover {
+        color: #0f0;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+h2 {
+    justify-self: center;
+    align-self: start;
+    font-size: 3em;
+    padding: 40px 0px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+h3 {
+    padding: 30px;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 2vw;
+    text-align: center;
+    color: #00ff0d;
+    text-shadow: 2px 2px 2px #000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+img {
+    max-width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.main {
+    font-size: 1vw;
+    overflow: hidden;
+}
+
+.content {
+    display: grid;
+}
+
+.center_grid {
+    justify-self: center;
+    align-self: center;
+}
+
+/*=====articles======*/
+.podgotovka {
+    background: linear-gradient(0deg, rgba(34, 50, 69, 1), rgba(0, 0, 0, 0.3)),
+        url(../img/12.jpg) no-repeat center center fixed;
+    background-size: cover;
+
+}
+
+.rekomendacii {
+    background: linear-gradient(0deg, rgba(34, 50, 69, 1), rgba(0, 0, 0, 0.3)),
+        url(../img/rekomendacii.jpg) no-repeat center center fixed;
+    background-size: cover;
+
+
+}
+
+.articles {
+    background-color: rgb(34, 50, 69);
+    padding: 40px 10vw 40px 2vw;
+    line-height: 3em;
+    font-family: 'gardens';
+    div.nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+         margin-top: 100px;
+         
+    }
+    a.nav {
+        display: inline-block;
+        padding: 20px 40px;
+        margin-right: 20px;
+        border: 1px solid #00ff0d;
+        overflow: hidden;
+        position: relative;
+        &::after{
+            content: '';
+            width:50%;
+            height: 100%;
+            left: -70%;
+            top: 0;
+            position: absolute;
+            transform: skew(45deg);
+            background:linear-gradient(90deg, transparent, rgba(255, 255, 255,.5), transparent);
+            transition: .3s;
+        }
+        &:last-child{
+            margin-right: 0px;
+        }
+        .fa-long-arrow-left,
+        .fa-long-arrow-right {
+            transition: .5s;
+        }
+        .fa-long-arrow-right{
+            margin-left: 10px;
+        }
+
+        &:hover {
+            border-color: #e6e6e6;
+            letter-spacing: .05em;
+
+            .fa-long-arrow-left {
+                margin-right: 10px;
+                transform: translate(-10px);
+            }
+            .fa-long-arrow-right {
+                margin-left: 10px;
+                transform: translate(10px);
+            }
+            &::after {
+                transform: skew(45deg);
+                left: 120%;
+            }
+        }
+    }
+
+    h4,
+    ol,
+    p {
+        color: #e6e6e6;
+        font-family: 'MOD';
+        letter-spacing: 3px;
+        margin: 50px 0;
+    }
+
+    h4,
+    p {
+        font-size: 1.7em;
+        margin: 100px 0;
+    }
+
+    ol {
+        padding-left: 3vw;
+        font-size: 1.4em;
+
+        li {
+            padding: 15px;
+
+            &::marker {
+                display: grid;
+
+                border-radius: 50%;
+                background: #000;
+            }
+
+            &:first-letter,
+            &::marker {
+                color: #00ff0d;
+                font-size: 1.5em;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            }
+
+
+
+
+        }
+    }
+}
+
+/*=====////articles======*/
+
+
+
+
+
+
+
+
+
+
+@import 'navigation';
+@import 'elements';
+@import 'feedback-telegram';
+@import 'header';
+@import 'section1';
+@import 'price';
+@import 'ouer-work';
+@import 'videos_photos';
+@import 'benefit';
+@import 'footer';
+@import 'animation';
+@import 'media/style_400px';

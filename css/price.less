@@ -1,0 +1,210 @@
+//main:style.less
+
+.price {
+    background: rgba(0, 0, 0, 0.8);
+
+    .btn-benefit {
+        font-size: 1.4em;
+        text-shadow: 2px 2px 5px #000;
+        background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.8)), url('../img/svg/percentage.svg') no-repeat center center;
+        background-size: cover;
+        padding: 2vw;
+        position: fixed;
+        bottom: 2%;
+        left: -10%;
+        z-index: 3000;
+        opacity: 0;
+    }
+
+    &:hover {
+        .btn-benefit {
+            opacity: 1;
+            left: 0%;
+        }
+    }
+
+    strong {
+        display: grid;
+        font-size: 2em;
+        color: #3cff00;
+        text-align: center;
+        margin: 5vw;
+    }
+
+    .price-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .price-card {
+            border-radius: 5px;
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid #fff;
+            color: #fff;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            transition: .5s linear;
+
+            &:hover {
+                border-color: #09ff00;
+                border-radius: 30px;
+                box-shadow: 0 0 10px 2px #09ff00, inset 0 0 10px 2px #09ff00;
+
+                h4 {
+                    &::before {
+                        width: 100%;
+                    }
+                }
+
+                .order {
+                    &::after {
+                        animation: rotateLogo 2s infinite linear;
+                        opacity: 1;
+                    }
+                }
+
+                span {
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .price-text {
+                font-size: 3em;
+                color: green;
+                justify-self: center;
+                background: linear-gradient(0deg, #ffffff, #06b100);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: bold;
+                margin: 5% 0;
+            }
+
+            span {
+                font-size: 3em;
+                color: green;
+                justify-self: center;
+                background: linear-gradient(0deg, #ffffff, #06b100);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: bold;
+                margin: 5% 0;
+                position: relative;
+
+                &::after {
+                    content: 'руб.';
+                    margin-left: 5px;
+                }
+
+                &::before {
+                    content: '';
+                    width: 100%;
+                    height: 5px;
+                    border-radius: 50%;
+                    background: linear-gradient(90deg, rgba(255, 255, 255, 0), #06b100, rgba(6, 177, 0, 0));
+                    position: absolute;
+                    bottom: -15px;
+                    left: 0;
+                    filter: blur(3px);
+                    opacity: 0;
+                }
+            }
+
+            .order {
+                font-size: 1.5em;
+                display: grid;
+                justify-content: center;
+                align-items: center;
+                justify-self: center;
+                margin: 5% 0;
+                border-radius: 50%;
+                width: 120px;
+                height: 120px;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    justify-self: start;
+                    align-self: start;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    transform-origin: center;
+                    border-bottom: 3px solid #3cff00;
+                    border-top: 3px solid #48ff00;
+                    border-left: 3px solid #0051ff;
+                    border-right: 3px solid #0051ff;
+                    box-shadow: 0 0 10px 3px #1eff00, inset 0 0 10px 3px #1eff00;
+                    opacity: 0;
+                }
+
+                &::before {
+                    content: '';
+                    justify-self: start;
+                    align-self: start;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    transform-origin: center;
+                    bottom: 30%;
+                    left: 10%;
+                    border-bottom: 2px solid #0f0;
+                    width: 80%;
+                    height: 50%;
+                    border-radius: 0%;
+                }
+
+                &:hover {
+                    &::before {
+                        bottom: 15%;
+                        left: 15%;
+                        border-bottom: 10px solid #fff;
+                        width: 70%;
+                        height: 50%;
+                        border-radius: 50%;
+                        transition-delay: .2s;
+                    }
+                }
+            }
+
+            p {
+                padding: 20px;
+                color: #fff;
+                font-size: 1.5em;
+            }
+
+            i {
+                font-size: 2em;
+                margin: 0px 0px 20px 0px;
+            }
+
+            h4 {
+                font-size: 2em;
+                margin: 20px;
+                position: relative;
+                justify-self: center;
+                float: left;
+
+                &::before {
+                    content: attr(data-myas);
+                    position: absolute;
+                    text-align: center;
+                    white-space: nowrap;
+                    color: #09ff00;
+                    overflow: hidden;
+                    width: 0;
+                }
+            }
+        }
+    }
+}

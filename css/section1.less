@@ -1,0 +1,112 @@
+//main:style.less
+
+.section1 {
+    background: linear-gradient(0deg, #ffffff, rgba(0, 0, 0, 0.8) 100vh), url(../img/bg_tarakan.webp) no-repeat center center fixed;
+    background-size: cover;
+    display: grid;
+
+    h2 {
+        background: none;
+        overflow: hidden;
+        width: 100%;
+
+        &::before {
+            content: attr(data-myas);
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 40px 0px;
+            white-space: nowrap;
+            color: rgba(255, 0, 0, 0.9);
+            overflow: hidden;
+            transition: 1s;
+            width: 0;
+        }
+
+        &:hover {
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+
+    ul {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        grid-template-columns: repeat(2, 1fr);
+
+        li {
+            font-family: 'capture-smallz';
+            letter-spacing: .3vw;
+            display: grid;
+            text-shadow: 1px 1px 3px #333;
+            box-shadow: inset 3px 3px 10px 2px #000000, inset -3px -3px 10px 2px #ffffff;
+            text-align: center;
+            font-size: 2em;
+            color: #ffffff;
+            width: 20vw;
+            height: 20vw;
+            align-items: center;
+            padding: 3vw;
+            margin-bottom: 10vh;
+            border-radius: 50%;
+            position: relative;
+            backdrop-filter: blur(4px);
+            transition: .5s;
+
+            &::after {
+                content: '?';
+                font-family: 'capture-smallz';
+                color: transparent;
+                font-size: 10em;
+                text-shadow: 1px 1px 1px rgba(255, 0, 0, 0.1), -2px -2px 1px rgba(255, 255, 255, 0.1);
+                justify-self: center;
+                align-self: center;
+                position: absolute;
+                left: 25%;
+                top: -20%;
+            }
+
+            &:hover {
+                transition: .5s;
+                color: #ff0000;
+            }
+        }
+    }
+
+    .stop {
+        font-family: 'capture-smallz';
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        justify-self: center;
+        font-size: 4em;
+        width: 15vw;
+        height: 15vw;
+        background: url(../img/svg/hand.svg) no-repeat center center, #f00;
+        border-radius: 50%;
+        background-size: 50%;
+        box-shadow: 2px 2px 10px #000, -2px -2px 10px #fff, inset -4px 4px 15px #000, inset 4px -4px 15px #fff;
+        color: #ffffff;
+        animation: scale .5s alternate-reverse infinite ease-in;
+    }
+
+    p {
+        padding: 30px;
+        margin: 20px 0;
+        background: rgba(255, 255, 255, 0.2);
+        font-size: 2em;
+        text-align: center;
+        color: #00ff0d;
+        text-shadow: 2px 2px 2px #000;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        font-family: 'gardens';
+
+        strong {
+            text-transform: uppercase;
+            color: #00ff0d;
+        }
+    }
+}

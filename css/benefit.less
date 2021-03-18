@@ -1,0 +1,205 @@
+//main:style.less
+.ben {
+    width: 100%;
+    background: #7c7c7c;
+    display: grid;
+    position: relative;
+    z-index: 4;
+
+    &::after {
+        content: '%';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 50vw;
+        text-shadow: -9px -9px 10px rgba(0, 0, 0, 0.3), 9px 9px 10px rgba(255, 255, 255, 0.3);
+        text-align: center;
+        z-index: -1;
+        opacity: .1;
+        color: transparent;
+    }
+
+    h4 {
+        color: #00ff0d;
+        padding: 2vw;
+        background: linear-gradient(90deg, rgba(34, 50, 69, 0.6), rgba(255, 255, 255, 0));
+        font-size: 2em;
+        transition: .5s;
+    }
+
+    .calc {
+        display: flex;
+        width: 100%;
+    }
+}
+
+.block {
+    width: 50%;
+    font-size: 1.2em;
+    margin-top: 2vw;
+
+    h5 {
+        font-size: 1.5em;
+        color: #244466;
+        padding: 1vw;
+        margin-bottom: 1vw;
+        position: relative;
+        top: 0;
+        left: 0;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0px;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #00b109, rgba(255, 255, 255, 0));
+            transition: .5s;
+        }
+    }
+
+    &:hover {
+        h5 {
+            &::before {
+                width: 80%;
+            }
+        }
+    }
+}
+
+input[type="button"] {
+    justify-self: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    width: 30vw;
+    height: 5vw;
+    font-size: 2em;
+    color: transparent;
+    border-radius: 10px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.7), 0 -1px 1px rgba(255, 255, 255, 0.5);
+    box-shadow: inset 1px 1px 3px #fff, inset -1px -1px 3px #000;
+    background: linear-gradient(#00b109, rgba(34, 50, 69, 0.9));
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+
+    &:hover {
+        transform: scale(1.03);
+        box-shadow: inset 1px 1px 3px #fff, inset -1px -1px 3px #000, 0 2px 6px #000;
+        text-shadow: -100px 1px 1px rgba(0, 0, 0, 0), 100px -1px 1px rgba(255, 255, 255, 0);
+        color: #ccc;
+    }
+}
+
+.checks {
+    padding: 20px;
+    display: grid;
+    grid-gap: 20px;
+}
+
+.ben-switch-wrap {
+    display: flex;
+    justify-content: start;
+
+    .label-text {
+        font-size: 1.3em;
+        color: #eee;
+        display: flex;
+        margin-left: 20px;
+
+        &::after {
+            content: '%';
+            margin-left: 10px;
+        }
+    }
+}
+
+.ben-switch {
+    position: relative;
+    display: inline-block;
+    width: 4vw;
+    height: 2vw;
+}
+
+.ben-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked+.ben-slider {
+        background: #F2F8F8;
+        box-shadow: 1px 1px 5px 1px #fff, -1px -1px 5px 1px #fff;
+
+        &::before {
+            transform: translate(1.8rem, -50%);
+            background: linear-gradient(#122335, #244466);
+        }
+    }
+
+    &:not(:checked) {
+        &:active+.ben-slider {
+            &::before {
+                width: 2.4rem;
+            }
+        }
+    }
+
+    &:checked {
+        &:active+.ben-slider {
+            &::before {
+                transform: translate(1rem, -50%);
+                width: 2.4rem;
+            }
+        }
+    }
+}
+
+.ben-slider {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: transparent;
+    box-shadow: inset -1px -1px 2px #fff, inset 1px 1px 2px #000;
+    border-radius: 20px;
+    transition: .2s;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: .2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1.6rem;
+        height: 1.6rem;
+        background: linear-gradient(#ffffff, #3d3d3d);
+        border-radius: 50%;
+        transition: .4s;
+    }
+}
+
+.premises {
+    display: grid;
+    justify-self: center;
+    align-self: start;
+    font-size: 1.3em;
+    padding: 15px;
+    background: linear-gradient(#ffffff 0%, #b6b6b6 100%);
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.res {
+    background: linear-gradient(20deg, #244466, #3d3d3d, #226125);
+    text-align: center;
+    color: #e5ffdb;
+    font-size: 2em;
+    padding: 20px;
+    margin-bottom: 20px;
+}
